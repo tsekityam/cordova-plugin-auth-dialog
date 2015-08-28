@@ -64,6 +64,9 @@
         }
     }
     
+    self.userName = [NSNull null];
+    self.password = [NSNull null];
+    
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:self.callbackId];
 }
 

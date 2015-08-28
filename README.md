@@ -1,23 +1,23 @@
-Apache Cordova Auth Dialog
+# Apache Cordova Auth Dialog
 =============================
 Adds support for authentication dialogs into Apache Cordova (Phonegap build support added)
 
-####Supported Platforms####
+## Supported Platforms
 
 - Android
 - iOS
 - Windows (includes Windows Phone 8.1)
 - Windows Phone 8.0
 
-####Supported Authentication Methods####
+## Supported Authentication Methods
 
 - Basic
 - Digest
 - NTLM
  
-##Platform quirks##
+## Platform quirks
 
-####Android####
+### Android
 
 **Pending the following PR to be merged and released to have this working**:
 https://github.com/apache/cordova-android/pull/143
@@ -28,7 +28,7 @@ Credentials are NOT persisted between app sessions so you need to enter them onc
 
 InAppBrowser plugin is NOT currently supported.
 
-####iOS####
+### iOS
 
 Requires manually executing the following method before accessing protected space (navigation or XmlHttpRequests).
 
@@ -38,7 +38,7 @@ Credentials are automatically cached by UIWebView so you do NOT need to enter th
 
 After authentication is you can do XmlHttpRequests or display protected space via ```window.location = 'some protected uri' ``` or using InAppBrowser plugin.
 
-####Windows####
+### Windows
 
 On Windows Tablet/PC (Windows 8.0 and Windows 8.1) native authentication dialog works out of the box so this functionality is not required (skipped).
 
@@ -48,7 +48,7 @@ Plugin overrides default XmlHttpRequest via custom wrapper based on original one
 
 Credentials are NOT persisted between app sessions so you need to enter them once per application start.
 
-####Window Phone 8.0####
+### Window Phone 8.0
 
 Plugins supports XmlHttpRequests and opening protected space in Cordova View. InAppBrowser plugin is NOT currently supported.
 

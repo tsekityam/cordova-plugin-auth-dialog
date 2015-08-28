@@ -17,6 +17,8 @@
 
 - (void)authenticate:(CDVInvokedUrlCommand*)command;
 
+- (void)logout:(CDVInvokedUrlCommand*)command;
+
 @end
 
 
@@ -26,7 +28,7 @@ typedef void (^CredentialsViewCallback)(NSString* userName, NSString* password, 
 
 @property (copy) CredentialsViewCallback onResult;
 
-- (void) requestUserCredentials: (NSString*) uri;
+- (void)requestUserCredentials: (NSString *)uri;
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
 

@@ -32,6 +32,41 @@
     [NSURLConnection  connectionWithRequest:request delegate:self];
 }
 
+- (void)logout:(CDVInvokedUrlCommand*)command
+{
+    NSLog(@"Logging out...");
+
+    // Clear credential storage
+    NSURLCredentialStorage *credentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
+    NSDictionary *credentialProtectionSpaces = [credentialStorage allCredentials];
+
+    for (NSURLProtectionSpace *protectionSpace in credentialProtectionSpaces)
+    {
+        NSDictionary *credentials = [credentialStorage credentialsForProtectionSpace:protectionSpace];
+        for (NSString * username in credentials)
+        {
+            [credentialStorage removeCredential:[credentials objectForKey:username] forProtectionSpace:protectionSpace];
+            NSLog(@"Clearing: %@", username);
+        }
+    }
+
+    NSLog(@"Checking...");
+
+    credentialStorage = [NSURLCredentialStorage sharedCredentialStorage];
+    credentialProtectionSpaces = [credentialStorage allCredentials];
+    for (NSURLProtectionSpace *protectionSpace in credentialProtectionSpaces)
+    {
+        NSDictionary *credentials = [credentialStorage credentialsForProtectionSpace:protectionSpace];
+        for (NSString * username in credentials)
+        {
+            [credentialStorage removeCredential:[credentials objectForKey:username] forProtectionSpace:protectionSpace];
+            NSLog(@"Checking: %@", username);
+        }
+    }
+    
+    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:self.callbackId];
+}
+
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     CDVPluginResult* errorResult;
     if (error.code == NSURLErrorUserCancelledAuthentication) {

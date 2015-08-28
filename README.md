@@ -1,5 +1,5 @@
 # Apache Cordova Auth Dialog
-=============================
+
 Adds support for authentication dialogs into Apache Cordova (Phonegap build support added)
 
 ## Supported Platforms

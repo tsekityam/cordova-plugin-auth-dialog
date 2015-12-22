@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-auth-dialog",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Adds support for authentication dialogs into Apache Cordova.",
   "cordova": {
     "id": "cordova-plugin-auth-dialog",

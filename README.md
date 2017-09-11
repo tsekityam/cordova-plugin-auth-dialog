@@ -22,7 +22,7 @@ Adds support for authentication dialogs into Apache Cordova (Phonegap build supp
 **Pending the following PR to be merged and released to have this working**:
 https://github.com/apache/cordova-android/pull/143
 
-No additional set up is required. Implementation is based on providing custom handler for [WebViewClient.onReceivedHttpAuthRequest](http://developer.android.com/reference/android/webkit/WebViewClient.html#onReceivedHttpAuthRequest(android.webkit.WebView, android.webkit.HttpAuthHandler, java.lang.String, java.lang.String)) which is automatically triggered when it is necessary during navigation or sending XmlHttpRequests.
+No additional set up is required. Implementation is based on providing custom handler for [WebViewClient.onReceivedHttpAuthRequest](http://developer.android.com/reference/android/webkit/WebViewClient.html#onReceivedHttpAuthRequest(android.webkit.WebView,%20android.webkit.HttpAuthHandler,%20java.lang.String,%20java.lang.String)) which is automatically triggered when it is necessary during navigation or sending XmlHttpRequests.
 
 Credentials are NOT persisted between app sessions so you need to enter them once per application start.
 
